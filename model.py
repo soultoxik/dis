@@ -28,14 +28,18 @@ class Publisher:
 		self.observers.append(observer)
 
 class Plain(Publisher):
+	V = 4
+	
 	def __init__(self, id):
 		super(Plain, self).__init__()
 		self.id = id
+		self.lat = random.randint(0, 180)
+		self.lon = random.randint(0, 180)
 		
 	def publish(self):
-		lat = random.randint(0, 180)
-		lon = random.randint(0, 180)
-		return {'id': self.id, 'lat': lat, 'lon': lon}
+		self.lat = random.randint(self.lat - self.V , self.lat + self.V)
+		self.lon = random.randint(self.lon - self.V , self.lon + self.V)
+		return {'id': self.id, 'lat': self.lat, 'lon': self.lon}
 		
 		
 class Observer:
