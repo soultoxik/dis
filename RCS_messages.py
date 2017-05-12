@@ -1,0 +1,3 @@
+ADD = 0
+REMOVE = 1
+ALL = 2

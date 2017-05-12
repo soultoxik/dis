@@ -47,13 +47,18 @@ for i in range(0,count):
 	plains.append(plain)
 	plain.addObserver(o1)
 	plain.run()
+
+
 	
 def signal_handler(signal, frame):
+
 	for plain in plains:
 		plain.stop()
 		print("plain " + str(plain.id) + " stopped")
+
 	s.close()
 	sys.exit(0)
+	
 signal.signal(signal.SIGINT, signal_handler)
 
 while True:

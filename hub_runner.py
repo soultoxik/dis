@@ -19,7 +19,6 @@ inputs = [server]
 outputs = []
 message_queues = {}
 
-
 def signal_handler(signal, frame):
 	server.close()
 	sys.exit(0)
@@ -39,19 +38,7 @@ while inputs:
 			if data:
 				
 				message_queues[s].put(data)
-				
-				#print(data)
-				#rec_data = data.decode()
-				#rec_dict = json.loads(rec_data)
-				#print(s.getpeername(), ':', rec_dict)
-				#rec_data = rec_data.split('}')
-				#for rec in rec_data:
-				#	try:
-				#		rec_dict = json.loads(rec)
-				#		print(s.getpeername(), ':', rec_dict)
-				#	except:
-				#		pass
-				
+
 				if s not in outputs:
 					outputs.append(s)
 			else:
