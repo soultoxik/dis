@@ -1,4 +1,4 @@
-#radar resolver coordinator
+#radar collision coordinator
 from model import *
 from observer import *
 import sys

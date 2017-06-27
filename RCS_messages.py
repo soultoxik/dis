@@ -1,3 +1,4 @@
 ADD = 0
 REMOVE = 1
 ALL = 2
+BY_ID = 3
